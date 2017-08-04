@@ -21,12 +21,7 @@ Thumbs.db
 node_modules
 .cache
 *.css
-build
-lib
-es
 coverage
-*.js
-*.jsx
 *.map
 !tests/index.js
 !/index*.js

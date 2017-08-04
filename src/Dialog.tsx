@@ -146,6 +146,7 @@ export default class Dialog extends React.Component<IDialogPropTypes, any> {
   }
   getDialogElement = () => {
     const props = this.props;
+    console.log('getDialogElement props:', props)
     const closable = props.closable;
     const prefixCls = props.prefixCls;
     const dest: any = {};
@@ -164,6 +165,7 @@ export default class Dialog extends React.Component<IDialogPropTypes, any> {
         </div>
       );
     }
+    console.log('getDialogElement footer:', footer)
 
     let header;
     if (props.title) {
@@ -175,6 +177,7 @@ export default class Dialog extends React.Component<IDialogPropTypes, any> {
         </div>
       );
     }
+    console.log('getDialogElement header:', header)
 
     let closer;
     if (closable) {
@@ -187,6 +190,7 @@ export default class Dialog extends React.Component<IDialogPropTypes, any> {
           <span className={`${prefixCls}-close-x`} />
         </button>);
     }
+    console.log('getDialogElement closer:', closer)
 
     const style = assign({}, props.style, dest);
     const transitionName = this.getTransitionName();
@@ -213,10 +217,10 @@ export default class Dialog extends React.Component<IDialogPropTypes, any> {
           {footer}
         </div>
         <div tabIndex={0} ref="sentinel" style={{ width: 0, height: 0, overflow: 'hidden' }}>
-          sentinel
         </div>
       </LazyRenderBox>
     );
+    console.log('getDialogElement dialogElement:', dialogElement)
     return (
       <Animate
         key="dialog"

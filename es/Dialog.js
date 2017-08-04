@@ -92,6 +92,7 @@ var Dialog = function (_React$Component) {
         };
         _this.getDialogElement = function () {
             var props = _this.props;
+            console.log('getDialogElement props:', props);
             var closable = props.closable;
             var prefixCls = props.prefixCls;
             var dest = {};
@@ -105,17 +106,21 @@ var Dialog = function (_React$Component) {
             if (props.footer) {
                 footer = React.createElement("div", { className: prefixCls + '-footer', ref: "footer" }, props.footer);
             }
+            console.log('getDialogElement footer:', footer);
             var header = void 0;
             if (props.title) {
                 header = React.createElement("div", { className: prefixCls + '-header', ref: "header" }, React.createElement("div", { className: prefixCls + '-title', id: _this.titleId }, props.title));
             }
+            console.log('getDialogElement header:', header);
             var closer = void 0;
             if (closable) {
                 closer = React.createElement("button", { onClick: _this.close, "aria-label": "Close", className: prefixCls + '-close' }, React.createElement("span", { className: prefixCls + '-close-x' }));
             }
+            console.log('getDialogElement closer:', closer);
             var style = assign({}, props.style, dest);
             var transitionName = _this.getTransitionName();
-            var dialogElement = React.createElement(LazyRenderBox, { key: "dialog-element", role: "document", ref: "dialog", style: style, className: prefixCls + ' ' + (props.className || ''), visible: props.visible }, React.createElement("div", { className: prefixCls + '-content' }, closer, header, React.createElement("div", _extends({ className: prefixCls + '-body', style: props.bodyStyle, ref: "body" }, props.bodyProps), props.children), footer), React.createElement("div", { tabIndex: 0, ref: "sentinel", style: { width: 0, height: 0, overflow: 'hidden' } }, "sentinel"));
+            var dialogElement = React.createElement(LazyRenderBox, { key: "dialog-element", role: "document", ref: "dialog", style: style, className: prefixCls + ' ' + (props.className || ''), visible: props.visible }, React.createElement("div", { className: prefixCls + '-content' }, closer, header, React.createElement("div", _extends({ className: prefixCls + '-body', style: props.bodyStyle, ref: "body" }, props.bodyProps), props.children), footer), React.createElement("div", { tabIndex: 0, ref: "sentinel", style: { width: 0, height: 0, overflow: 'hidden' } }));
+            console.log('getDialogElement dialogElement:', dialogElement);
             return React.createElement(Animate, { key: "dialog", showProp: "visible", onLeave: _this.onAnimateLeave, transitionName: transitionName, component: "", transitionAppear: true }, dialogElement);
         };
         _this.getZIndexStyle = function () {

@@ -361,6 +361,7 @@ export default class Dialog extends React.Component<IDialogPropTypes, any> {
     if (props.visible) {
       style.display = null;
     }
+    console.log('this.getDialogElement():', this.getDialogElement())
     return (
       <div>
         {this.getMaskElement()}

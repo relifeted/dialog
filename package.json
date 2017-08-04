@@ -62,9 +62,6 @@
     "react-native": "0.34.1",
     "react-native-index-page": "~0.1.0"
   },
-  "pre-commit": [
-    "lint"
-  ],
   "typings": "./lib/DialogWrap.d.ts",
   "dependencies": {
     "babel-runtime": "6.x",

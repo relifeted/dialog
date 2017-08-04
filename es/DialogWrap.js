@@ -12,6 +12,8 @@ var DialogWrap = createReactClass({
 
         autoDestroy: false,
         getComponent: function getComponent(instance, extra) {
+            console.log('instance.props:', instance.props);
+            console.log('extra:', extra);
             return React.createElement(Dialog, _extends({}, instance.props, extra, { key: "dialog" }));
         },
         getContainer: function getContainer(instance) {
